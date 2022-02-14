@@ -129,6 +129,18 @@ List<String> sudokublock = [
   "000831640",
   "000040027",
 ];
+
+List<String> defaultSudoku = [
+  "400096208",
+  "308100090",
+  "961000700",
+  "003405960",
+  "600928074",
+  "004700100",
+  "009002001",
+  "000831640",
+  "000040027",
+];
 List<TextEditingController> controller = [
   for (int i = 0; i < 81; i++) TextEditingController()
 ];
@@ -141,8 +153,8 @@ class SudokuBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     var mediaquery = MediaQuery.of(context).size;
     return Container(
-      height: mediaquery.height * 0.5,
-      color: Colors.black,
+      // height: mediaquery.height * 0.5,
+      // color: Colors.black,
       child: GridView.builder(
         itemCount: 9,
         itemBuilder: (ctx, index1) => Padding(
@@ -200,7 +212,7 @@ class SudokuBoard extends StatelessWidget {
               sudokublock[x - 1][y - 1] == "0" ? "" : sudokublock[x - 1][y - 1],
           // controller: controller[(x - 1) * 9 + (y - 1)],
 
-          maxLength: 1,
+          // maxLength: 1,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
             counterText: "",
